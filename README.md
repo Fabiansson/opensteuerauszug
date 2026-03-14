@@ -1,3 +1,25 @@
+# OpenSteuerAuszug (Personal Fork)
+
+## Quick Start
+
+This fork adds a one-shot script that handles everything after cloning: virtualenv setup, dependency installation, Kursliste download, and report generation.
+
+```bash
+./generate_tax_report.sh
+```
+
+The script will:
+1. Ask for the tax year
+2. Set up the virtualenv and install dependencies
+3. Create a config for Canton Bern (`BE`)
+4. Download the latest Kursliste
+5. Look for `private/ibkr_YYYY.xml` — if missing, show instructions for creating the IBKR Flex Query
+6. Generate the Steuerauszug PDF and XML
+
+Output lands in `private/steuerauszug_YYYY.pdf` ready for import into TaxMe.
+
+---
+
 # OpenSteuerAuszug
 
 A Python package for generating Swiss tax statements (Steuerauszüge) from the statements of brokers that don't support it, e.g. mostly foreign ones.
